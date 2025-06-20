@@ -1,7 +1,8 @@
+import os
 from models import db, User, Movie
 import requests
 
-OMDB_API_KEY = 'd26a3211'
+OMDB_API_KEY = os.getenv('OMDB_API_KEY')
 OMDB_URL = 'http://www.omdbapi.com/'
 
 
@@ -19,6 +20,8 @@ class DataManager:
 
     def add_movie(self, user_id, movie_title):
         # Fetch movie info from OMDb
+        if not OMDB_API_KEY:
+            raise RuntimeError("OMDB_API_KEY not set!")
         params = {'apikey': OMDB_API_KEY, 't': movie_title}
         r = requests.get(OMDB_URL, params=params)
         data = r.json()
