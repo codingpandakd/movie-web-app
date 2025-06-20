@@ -1,0 +1,239 @@
+/* === Layout and background === */
+body {
+    background: linear-gradient(120deg, #e0eaff, #f3e7e9 75%);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #2d3540;
+    min-height: 100vh;
+}
+
+/* === Navbar and header === */
+.navbar, header {
+    box-shadow: 0 2px 12px -5px #4465a080;
+    background: #375a7f;
+}
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: .08em;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* === General Typography === */
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: #375a7f;
+    letter-spacing: .01em;
+}
+h2 {
+    font-size: 1.7rem;
+    margin-top: 0.5em;
+}
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+.card-subtitle {
+    font-size: 0.95em;
+    margin-bottom: 0.5rem;
+}
+
+/* === Card Shadow Utility Class === */
+.card-shadow {
+    box-shadow: 0 4px 32px 0 #bcdefa36;
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+/* === User List === */
+ul.list-group {
+    padding-left: 0;
+    margin-bottom: 1.2rem;
+}
+.list-group-item {
+    background: rgba(255,255,255,0.95);
+    border: none;
+    border-radius: 0.85rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 4px 0 #375a7f0a;
+    transition: transform 0.07s, box-shadow 0.1s;
+}
+.list-group-item:hover {
+    transform: translateY(-2px) scale(1.025);
+    box-shadow: 0 2px 12px 0 #375a7f27;
+}
+a.btn-link {
+    color: #375a7f;
+    text-decoration: none;
+    font-size: 1.10em;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.15s, background 0.1s;
+    border-radius: .5rem;
+}
+a.btn-link:hover {
+    background: #f7faff;
+    color: #0ac282;
+}
+
+/* === Movie Card Grid === */
+.row.g-4 > * {
+    display: flex;
+}
+.movie-card.card {
+    border-radius: 1.1rem;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 4px 16px 0 #4465a018, 0 1.5px 6px 0 #e0eaff07;
+    transition: transform 0.12s, box-shadow 0.12s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.movie-card.card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px #375a7f22;
+}
+.movie-poster {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: #e6e9f0;
+    border-top-left-radius: 1.1rem;
+    border-top-right-radius: 1.1rem;
+    transition: filter 0.2s;
+}
+.card-body {
+    padding: 1.1rem 1.1rem 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+.movie-card form {
+    width: 100%;
+}
+.movie-card input[type="text"].form-control-sm {
+    font-size: .95em;
+    padding: 0.35em 1em;
+    border-radius: 1.2rem;
+    margin-right: 0.3em;
+}
+.movie-card .btn-sm {
+    border-radius: .9rem;
+    font-size: .87em;
+    min-width: unset;
+    padding: 0.3em 0.85em;
+}
+.movie-card .btn-danger {
+    margin-top: .2em;
+}
+.movie-card .form-control-sm, .movie-card .btn-sm {
+    min-height: unset;
+}
+
+@media (max-width: 1190px) {
+    .movie-poster { height: 180px; }
+}
+@media (max-width: 991px) {
+    .movie-poster { height: 150px; }
+}
+@media (max-width: 767px) {
+    .movie-poster { height: 130px; }
+    .card-title { font-size: 1em; }
+}
+@media (max-width: 575px) {
+    .movie-poster { height: 90px; }
+    .card-body { padding: 0.6rem 0.3rem;}
+    .card-title { font-size: .97em; }
+}
+
+/* === Add Movie/Form Styling === */
+form {
+    margin-bottom: 0;
+}
+input[type="text"], .form-control {
+    border-radius: 0.8rem;
+    border: 1.5px solid #b8c6e6;
+    background: #f8fafd;
+    transition: border .2s;
+}
+
+input[type="text"]:focus, .form-control:focus {
+    outline: none;
+    border-color: #375a7f;
+    background: #fff;
+    box-shadow: 0 0 0 2px #375a7f33;
+}
+
+/* == Buttons == */
+.btn {
+    border-radius: 2rem;
+    min-width: 115px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+.btn-primary {
+    background: linear-gradient(90deg,#375a7f 60%,#5b8ee5);
+    border: none;
+}
+.btn-primary:hover {
+    background: linear-gradient(90deg,#5b8ee5 60%,#375a7f);
+}
+.btn-success {
+    background: linear-gradient(90deg,#0ac282,#43e97b);
+    border: none;
+}
+.btn-success:hover {
+    background: linear-gradient(90deg,#43e97b 60%,#0ac282);
+}
+.btn-warning {
+    color: #fff;
+    background: linear-gradient(90deg,#fbb034,#ffdd00);
+    border: none;
+}
+.btn-warning:hover {
+    background: linear-gradient(90deg,#fbb034,#ffdd00);
+    color: #222;
+}
+.btn-danger {
+    background: linear-gradient(90deg,#f85757 60%,#e44d26);
+    border: none;
+}
+.btn-danger:hover {
+    background: linear-gradient(90deg,#e44d26 50%,#f85757);
+}
+
+.form-inline input,
+.form-inline button {
+    margin-right: .3em;
+}
+
+/* === Alerts === */
+.alert-info {
+    background: linear-gradient(90deg,#e0ebff,#e7e6f3 80%) !important;
+    color: #343a40 !important;
+    border-radius: 1rem;
+    font-size: 1.05em;
+    box-shadow: 0 1px 8px #b8c6e61c;
+}
+
+/* === Misc === */
+::-webkit-scrollbar {
+    width: 8px;
+    background: #ebedfb;
+}
+::-webkit-scrollbar-thumb {
+    background: #c3cce0;
+    border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+    h2 { font-size: 1.17rem; }
+    .card-shadow { padding: 1rem; }
+}
